@@ -1,11 +1,31 @@
-import React from 'react';
-import { UilAirplay } from '@iconscout/react-unicons';
-
+import React from "react";
+import { UilLocationPoint, UilSearch } from "@iconscout/react-unicons";
 
 function Inputs() {
   return (
-    <div>Inputs</div>
-  )
+    <div className="flex flex-row justify-center my6">
+      <div className="flex flex-row w-3/4 items-center justify-center space-x-4">
+        <input
+          type="text"
+          placeholder="Search for city..."
+          className="text-xl font-light p-2 w-full shadow-xl focus: outline-none placeholder: lowercase"
+        ></input>
+        <UilSearch
+          size={25}
+          className="text-white cursor-pointer transition ease-out hover:scale-125"
+        />
+        <UilLocationPoint
+          size={25}
+          className="text-white cursor-pointer transition ease-out hover:scale-125"
+        />
+        <div className="flex flex-row w-1/4 items-center justify-center">
+          <button name="metric" className="text-xl font-light text-white " >°C</button>
+          <p className="text-xl text-white mx-1">|</p>
+          <button name="imperial" className="text-xl font-light text-white ">°F</button>
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default Inputs
+export default Inputs;
