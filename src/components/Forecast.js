@@ -5,7 +5,7 @@ import { iconUrlFromCode } from "../services/weatherServices";
 function Forecast({title,items}) {
   console.log("items in forecast:", items);
   {items.map((item) => (
-    console.log("index:" , item.id , "items:",item)
+    console.log("index:" , item.id , "items:",item.title)
   )
 )}
   return (
@@ -20,7 +20,7 @@ function Forecast({title,items}) {
             key={index}
             className="flex flex-col items-center justify-center"
           >
-            <p className="font-light text-sm">{item.title}</p>
+            <p className="font-light text-sm">{`${item.title}`}</p>
             <img
               src={iconUrlFromCode(item.icon)}
               className="w-12 my-1"

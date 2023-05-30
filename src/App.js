@@ -51,7 +51,7 @@ function App() {
           <TemperatureDetails weather={weather}/>
 
           <Forecast title="hourly forecast" items={weather.hourly}/>
-          <Forecast title="daily forecast" items={weather.hourly}/>
+          {/* <Forecast title="daily forecast" items={weather.hourly}/> */}
         </div>
       )}
     <ToastContainer autoClose={5000} theme='colored' newestOnTop={true} transition={Zoom}/>  

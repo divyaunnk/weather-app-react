@@ -46,10 +46,10 @@ const formatForecastWeather = (data) => {
     const { city: {name, timezone},list} = data;
     console.log("weather in data list",data.list.slice(0,5));
     const hourly = list.slice(0,5).map((d, index) => {   
-        console.log("time: ", formatToLocalTime(d.dt, timezone, "ccc"), d.dt,d.dt_text, timezone) 
+        console.log("time: ", formatToLocalTime(d.dt, timezone, "hh:mm a"), d.dt,d.dt_text, timezone) 
         return {
             id: index,
-            title: formatToLocalTime(d.dt, timezone, "ccc"),
+            title: formatToLocalTime(d.dt, timezone, "hh:mm a"),
             temp: (d.main.temp.toFixed() - 273.15).toFixed(),
             icon : d.weather[0].icon
         };
@@ -114,7 +114,7 @@ const formatForecastWeather = (data) => {
   
   
   const iconUrlFromCode = (code) =>
-    `http://openweathermap.org/img/wn/01n@2x.png`;
+    `http://openweathermap.org/img/wn/${code}@2x.png`;
   
   export default getFormattedWeatherData;
   
